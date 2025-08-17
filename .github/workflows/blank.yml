@@ -2,7 +2,7 @@ name: Update bedrock.json
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天自动运行一次，可按需修改
+    - cron: '0 0 * * *'  # 每天运行一次
   workflow_dispatch:       # 允许手动触发
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REPO_PAT }}  # 使用 PAT 而不是默认 token
 
       - name: Download bedrock.json
         run: |
@@ -36,6 +36,6 @@ jobs:
           if git diff-index --quiet HEAD -- bedrock.json; then
             echo "No changes to commit"
           else
-            git commit -m "Update bedrock.json from mcappx (replaced with From_OpenMBC)"
-            git push origin HEAD:main  # 修改为你的默认分支名（如 main 或 master）
+            git commit -m "Update bedrock.json (replaced From_mcappx.com → From_OpenMBC)"
+            git push origin HEAD:main  # 修改为你的分支名（main/master）
           fi
