@@ -17,7 +17,7 @@ jobs:
 
       - name: Download bedrock.json
         run: |
-          curl -s -o https://blog.zink.dpdns.org/proxy?url=https://data.mcappx.com/v1/bedrock.json
+          curl -s -o bedrock.json "https://blog.zink.dpdns.org/proxy?url=https://data.mcappx.com/v1/bedrock.json"
           if [ ! -f bedrock.json ]; then
             echo "Failed to download bedrock.json"
             exit 1
