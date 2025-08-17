@@ -37,5 +37,5 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update bedrock.json from mcappx (replaced with From_OpenMBC)"
-            git push origin HEAD:master  # 修改为你的默认分支名（如 main 或 master）
+            git push origin HEAD:main  # 修改为你的默认分支名（如 main 或 master）
           fi
