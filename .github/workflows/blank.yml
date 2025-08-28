@@ -2,7 +2,7 @@ name: Update bedrock.json
 
 on:
   schedule:
-    - cron: '0 0,12 * * *'  # 每分钟执行一次（UTC 时间）
+    - cron: '*/30 * * * *'  # 每分钟执行一次（UTC 时间）
   workflow_dispatch:       # 允许手动触发
 
 jobs:
